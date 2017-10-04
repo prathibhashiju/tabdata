@@ -14,6 +14,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
+
     userService.authenticate(req.body.username, req.body.password)
         .then(function (token) {
             // authentication is successful if the token parameter has a value

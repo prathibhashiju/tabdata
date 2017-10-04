@@ -30,6 +30,8 @@ function authenticateUser(req, res) {
 }
 
 function getCurrentUser(req, res) {
+console.log("usr"+req.user.sub);
+
     userService.getById(req.user.sub)
         .then(function (user) {
             if (user) {

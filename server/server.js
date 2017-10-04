@@ -27,21 +27,13 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// redirect to the install page if first time running
-app.use(function (req, res, next) {
-    if (!config.installed && req.path !== '/install') {
-        return res.redirect('/install');
-    }
 
-    next();
-});
 
 // api routes
-app.use('/api/contact', require('./controllers/api/contact.controller'));
-app.use('/api/pages', require('./controllers/api/pages.controller'));
-app.use('/api/posts', require('./controllers/api/posts.controller'));
-app.use('/api/redirects', require('./controllers/api/redirects.controller'));
+
+app.use('/api/books', require('./controllers/api/books.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
+
 
 // make JWT token available to angular app
 app.get('/token', function (req, res) { 
@@ -49,14 +41,14 @@ app.get('/token', function (req, res) {
 });
 
 // standalone pages
-app.use('/install', require('./controllers/install.controller'));
+app.use('/register', require('./controllers/register.controller'));
 app.use('/login', require('./controllers/login.controller'));
-
 // admin section
 app.use('/admin', require('./controllers/admin.controller'));
 
-// blog front end
-app.use('/', require('./controllers/blog.controller'));
+
+app.use('/', require('./controllers/login.controller'));
+
 
 // start server
 var port = process.env.NODE_ENV === 'production' ? 80 : 3000;

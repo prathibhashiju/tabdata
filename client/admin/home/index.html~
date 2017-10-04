@@ -1,0 +1,5 @@
+﻿<h1>Hi {{vm.user.firstName}}!!</h1>
+<div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" ng-model="vm.user.username" required />
+                </div>

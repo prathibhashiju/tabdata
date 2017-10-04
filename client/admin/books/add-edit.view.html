@@ -1,0 +1,19 @@
+﻿<div class="books-add-edit">
+    <h1>Book Details</h1>
+    <form ng-if="!vm.loading">
+        <div class="form-group">
+            <label for="from">Book Name</label>
+            <input type="text" id="from" class="form-control" ng-model="vm.book.from" required />
+        </div>
+        <div class="form-group">
+            <label for="to">Author</label>
+            <input type="text" id="to" class="form-control" ng-model="vm.book.to" />
+        </div>
+        <hr />
+        <div class="form-group">
+            <a class="btn btn-primary" ng-click="vm.saveBook()">Save</a>
+            <a class="btn btn-default" href="#/books">Cancel</a>
+            <a class="btn btn-danger" ng-click="vm.deleteBook()" ng-show="vm.book._id">Delete</a>
+        </div>
+    </form>
+</div>

@@ -6,7 +6,7 @@ var slugify = require('helpers/slugify');
 var fileExists = require('helpers/file-exists');
 
 router.use('/', ensureAuthenticated);
-router.post('/upload', getUpload().single('upload'), upload); // handle file upload
+//router.post('/upload', getUpload().single('upload'), upload); // handle file upload
 router.use('/', express.static('../client/admin')); // serve admin front end files from '/admin'
 
 module.exports = router;
@@ -27,7 +27,7 @@ function upload(req, res, next) {
 
 function ensureAuthenticated(req, res, next) {
     // use session auth to secure the front end admin files
-    if (!req.session.token) {
+ if ( !req.session.token) {
         return res.redirect('/login?returnUrl=' + encodeURIComponent('/admin' + req.path));
     }
 

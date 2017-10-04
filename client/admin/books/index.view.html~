@@ -1,0 +1,131 @@
+<head>
+<!--  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstarp-tpls.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-datatables/2.1.0/angular-datatables.js"></script>
+
+
+<!--<script src="//cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"></script>-->
+<script src="_content/datatable.css"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular-datatables/2.1.0/angular-datatables.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-datatables/2.1.0/angular-datatables.directive.js"></script>
+
+ <style type="text/css">
+div.dataTables_wrapper div.dataTables_filter{text-align:right}div.dataTables_wrapper div.dataTables_filter label{font-weight:normal;white-space:nowrap;text-align:right}div.dataTables_wrapper div.dataTables_filter input{margin-right:0.5em;display:inline-block;width:auto}-->
+<style type="text/css">
+#example_filter{text-align:right; display : none;}
+.buttons{
+
+float:left; text-align:right;}
+div{
+align-items:center;
+}
+h1{
+
+text-align:center;}
+#search{
+
+background-color:blue;
+text-align:right;
+position:relative;
+left:600px;
+width:40px;
+height:60px;
+}
+#search glyphicon.glyphicon-search{
+position:absolute;
+
+width:40px;
+height:60px
+}
+
+</style>
+
+</head>
+﻿
+   <div class="index-header">
+        <h1>My Books</h1>
+        <div class="buttons">
+            <a href="#/books/add" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> Book
+            </a>
+
+        </div>
+<div id="search" > <i class="glyphicon glyphicon-search" style="color:red;" ></i>
+</div>
+
+    </div>
+
+    <table id="example" class="books-table table table-striped"  ui-jq="dataTable" datatable="ng" ui-options="dataOpt" >
+
+       <thead> <tr>
+            <th>Book name</th>
+            <th>Author</th>
+            <th></th>
+        </tr></thead>
+<tbody>
+        <tr dt-rows ng-repeat="book in data" emit-last-repeat-element>
+            <td>{{book.from}}</td>
+            <td>{{book.to}}</td>
+            <td class="action-icons">
+                <a href="#/books/edit/{{book._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+            </td>
+        </tr></tbody>
+    </table>
+</div>
+<script src="angular-datatable.min.js"></script>
+<!-- <script data-require="jquery@1.10.1" data-semver="1.10.1" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" data-require="angular.js@1.2.15" data-semver="1.2.15" src="http://code.angularjs.org/1.2.15/angular.js"></script>
+    <script src="https://rawgithub.com/vivendi/angular-datatables/master/src/angular-datatables.js"></script>
+	<script src="https://rawgithub.com/vivendi/angular-datatables/master/src/angular-datatables.directive.js"></script>
+	<script src="https://rawgithub.com/vivendi/angular-datatables/master/src/angular-datatables.factory.js"></script>
+	<script src="https://rawgithub.com/vivendi/angular-datatables/master/src/angular-datatables.bootstrap.js"></script>
+  <!--
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+// JQuery Reference, If you have added jQuery reference in your master page then ignore, 
+// else include this too with the below reference
+
+<script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-datatables/2.1.0/angular-datatables.js"></script>
+
+<script>
+  $(function(){
+    $("#example").dataTable();
+
+  })
+  </script>
+ticle we’ll create a listing of websites in the SitePoint network. We’ll start with the listing of a few site names, and then we’ll add more columns and features. Here we have an HTML table with one column that lists the names of just three sites. Let’s see what DataTables can do with a minimal setup.
+
+ticle we’ll create a listing of websites in the SitePoint network. We’ll start with the listing of a few site names, and then we’ll add more columns and features. Here we have an HTML table with one column that lists the names of just three sites. Let’s see what DataTables can do with a minimal setup.
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<body>
+  <table id="example">
+    <thead>
+      <tr><th>Sites</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>SitePoint</td></tr>
+      <tr><td>Learnable</td></tr>
+      <tr><td>Flippa</td></tr>
+    </tbody>
+  </table>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+</body>
+</html-->
